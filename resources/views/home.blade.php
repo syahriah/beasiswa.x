@@ -76,43 +76,48 @@
         <!-- /.card-body -->
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">
-            <i class="ion ion-clipboard mr-1"></i>
-            To Do List
-          </h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <ul class="todo-list" data-widget="todo-list">
-            @foreach ($data as $dt)
-              
-            <li>
-              <span class="handle">
-                <i class="fas fa-ellipsis-v"></i>
-                <i class="fas fa-ellipsis-v"></i>
-              </span>
-              <div  class="icheck-primary d-inline ml-2">
-                <input type="checkbox" value="" name="todo2" id="todoCheck2" @if($dt->status == 'Telah Direspon') checked @endif>
-                <label for="todoCheck2"></label>
-              </div>
-              <span class="text">{{$dt->maintenance}}</span>
-              <div class="tools">
-                <i class="fas fa-edit"></i>
-                <i class="fas fa-trash-o"></i>
-              </div>
-            </li>
-            
-            @endforeach
-          </ul>
-        </div>
-      </div>
+      <div class="input-group mb-3">
+
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          <br>
+          <br>
+            <h3>JUMLAH SLOT BEASISWA X</h3>
+          </div>
+          </div>
+    </div>
+    
+    <input id="slot" type="text" class="form-control" placeholder="Masukkan Jumlah Slot Penerima Beasiswa" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="btnslot">Button </button>
       <!-- /.card -->
     </section>
+    <section class="content">
+      <div class="container-fluid">
+    <table class="table table-dark table-striped">
+        <thead>
+               <tr>
+                    <th>Jumlah Slot Beasiswa X</th>
+                    <th>Action</th>
+                </tr>
+        </thead>
+        <tbody>
+            </tbody>
+     </table>
+    </div>
+     </section>
     <!-- /.Left col -->
     <!-- right col (We are only adding the ID to make the widgets sortable)-->
-    <section class="col-lg-5 connectedSortable">
+    
+    <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          <br>
+          <br>
+            <h3>TANGGAL PENUTUPAN FORM PENDAFTARAN</h3>
+          </div>
+          </div>
+    </div>
 
 
 @endsection

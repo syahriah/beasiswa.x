@@ -20,7 +20,6 @@
     </datalist>
     <table class="table table-dark table-striped">
     <br>
-    <br>
     <thead>
       <tr>
         <th>NO</th>
@@ -32,6 +31,7 @@
         <th>Nilai IPK</th>
         <th>Biaya UKT</th>
         <th>Gaji Orang Tua</th>
+        <th>Foto</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -47,6 +47,7 @@
           <td>{{$dt->ipk}}</td>
           <td>{{$dt->ukt}}</td>
           <td>{{$dt->gaji}}</td>
+          <td><img src="{{ url('storage/foto/'.$data->foto) }}" width="300px"></td>
           <td>
           <a href="/detail/{{$dt->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
           </td>

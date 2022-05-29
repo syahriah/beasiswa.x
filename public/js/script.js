@@ -1,4 +1,4 @@
-const txtElement = ['PENDAFTARAN BEASISWA X', 'GAESS'];
+const txtElement = ['PENDAFTARAN BEASISWA X',];
 let count = 0;
 let txtIndex = 0;
 let currentTxt = '';

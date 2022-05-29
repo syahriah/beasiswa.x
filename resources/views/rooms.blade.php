@@ -14,6 +14,12 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
+    <label for="peserta" class="form-label"></label>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="peserta">
+    </datalist>
+    <br>
     <table class="table table-dark table-striped">
     <thead>
       <tr>

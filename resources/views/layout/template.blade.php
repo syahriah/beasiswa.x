@@ -42,7 +42,7 @@
     <!-- Brand Logo -->
     <a href="/website" class="brand-link">
       <img src="img/logo.png" style="opacity: .8" height="60" width="60">
-      <span class="brand-text font-weight-light">BEASISWA </span>
+      <span class="brand-text font-weight-light">BEASISWA X</span>
     </a>
 
     <!-- Sidebar -->
@@ -136,7 +136,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="/">Syahriah Syafitri</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2021 <a href="/">BEASISWA X</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

@@ -14,7 +14,12 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    <a href="/dataresident" class="btn btn-primary btn-sm">ADD</a> <br> <br>
+    <label for="peserta" class="form-label"></label>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="peserta">
+    </datalist>
+    <br>
+    <br>
     @if (session('pesan'))
     <div class="alert alert-info alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -34,6 +39,7 @@
                     <th>Nilai IPK</th>
                     <th>Biaya UKT</th>
                     <th>Gaji Orang Tua</th>
+                    <th>Foto</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -49,9 +55,9 @@
                   <td>{{$dt->ipk}}</td>
                   <td>{{$dt->ukt}}</td>
                   <td>{{$dt->gaji}}</td>
+                  <td><{{$dt->foto}}></td>
                   <td>
                     <a href="/detail/{{$dt->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                    <a href="/editresident/{{$dt->id}}" class="btn btn-warning"><i class="fas fa-pen"></i></a>
                     <a href="/hapusresident/{{$dt->id}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>

@@ -30,10 +30,9 @@
 			<h1><a href="index.html"></a></h1>
 			<ul>
 				<li><a href="#home">HOME</a></li>
-				<li><a href="#maintenance">BIODATA</a></li>
-				<li><a href="#comment">REASON</a></li>
-				<li><a href="#contact">CONTACT</a></li>
+				<li><a href="#bio">DAFTAR</a></li>
 				<li><a href="#hasil">HASIL SELEKSI</a></li>
+				<li><a href="#contact">CONTACT</a></li>
 				<li><a href="/logout">LOGOUT</a></li>
 			</ul>
 		</div>
@@ -46,9 +45,9 @@
 	</section>
 
 	<!-- about -->
-	<section id="maintenance">
+	<section id="bio">
 		<div class="container">
-			<h3>BIODATA</h3>
+			<h3>PENDAFTARAN BEASISWA X</h3>
 			<form action="/maintenance" method="POST">
 				@csrf
 			<label class="form-label">Masukkan Nama Lengkap</label>
@@ -117,23 +116,6 @@
 			<button type="submit" class="btn btn-primary my-3">Kirim</button>
 			</div>
 		</form>
-			
-				</section>
-				<section id="comment">
-					<div class="container">
-						<h3>REASON</h3>	
-						<div class="mb-12">
-							<div class="mb-12">
-								<form action="/komentar" method="POST">
-									@csrf
-									<label for="komentar" class="form-label" >Masukkan Alasan anda membutuhkan beasiswa X sebagai pertimbangan Panitia Seleksi</label>
-									<textarea required name="comment" class="form-control" id="komentar" rows="3" placeholder='Masukkan Komentar'></textarea>
-									<button class="btn btn-primary my-3" >Kirim</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				</section>
 
 				<section id="hasil">
 					<div class="container">
@@ -143,8 +125,6 @@
 						<h5>PENGUMUMAN HASIL SELEKSI AKAN DITAMPILKAN PADA ****</h5>
 					</div>
 				</section>
-
-	<section id="comment">
 		
 
 	<!-- CONTACT -->

@@ -30,8 +30,8 @@
 			<h1><a href="index.html"></a></h1>
 			<ul>
 				<li><a href="#home">HOME</a></li>
-				<li><a href="#maintenance">BIODATA</a></li>
-				<li><a href="#comment">REASON</a></li>
+				<li><a href="#bio">DAFTAR</a></li>
+				<li><a href="#hasil">REASON</a></li>
 				<li><a href="#contact">CONTACT</a></li>
 				<li><a href="/logout">HASIL SELEKSI</a></li>
 			</ul>
@@ -45,99 +45,33 @@
 	</section>
 
 	<!-- about -->
-	<section id="maintenance">
+	<section id="bio">
 		<div class="container">
-			<h3>BIODATA</h3>
-			<form action="/maintenance" method="POST">
-				@csrf
-			<label class="form-label">Masukkan Nama Lengkap</label>
-			<div class="row g-3">
-				<div class="col">
-					<input type="text" class="form-control" placeholder="First name" aria-label="First name">
-				</div>
-				<div class="col">
-					<input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-				</div>
-			</div>
-			<br>
-			<div class="col-12">
-				<label for="inputKampus" class="form-label">Nama Kampus</label>
-				<input type="text" class="form-control" id="inputKampus" placeholder="Masukkan nama kampus secara lengkap">
-			</div>
-			<br>
-			<div class="col-md-12">
-				<label for="ak-kampus" class="form-label">Akreditasi Kampus</label>
-				<select id="ak-kampus" class="form-select">
-				<option>A</option>
-				<option>B</option>
-				<option>C</option>
-				<option selected >...</option>
-				</select>
-			</div>
-			<br>
-			<div class="col-12">
-				<label for="inputProdi" class="form-label">Program Studi</label>
-				<input type="text" class="form-control" id="inputProdi" placeholder="Masukkan Program Studi">
-			</div>
-			<br>
-			<div class="col-md-12">
-				<label for="ak-prodi" class="form-label">Akreditasi Program Studi</label>
-				<select id="ak-prodi" class="form-select">
-				<option>A</option>
-				<option>B</option>
-				<option>C</option>
-				<option selected >...</option>
-				</select>
-			</div>
-			<br>
-			<div class="col-12">
-				<label for="inputIPK" class="form-label">Nilai IPK</label>
-				<input type="text" class="form-control" id="inputIPK" placeholder="Masukkan nilai IPK terakhir">
-			</div>
-			<br>
-			<div class="col-12">
-				<label for="inputUKT" class="form-label">Biaya UKT</label>
-				<input type="text" class="form-control" id="inputUKT" placeholder="Masukkan biaya UKT Per-Semester">
-			</div>
-			<br>
-			<label for="inputGaji" class="form-label">Gaji Orang Tua Per-Bulan</label>
-				<select id="inputGaji" class="form-select">
-				<option selected>Rp 1.000.000 - Rp 2.000.000</option>
-				<option>Rp 2.000.000 - Rp 3.000.000</option>
-				<option>Rp 3.000.000 - Rp 4.000.000</option>
-				<option>Rp 4.000.000 - Rp 5.000.000</option>
-				<option>Rp 5.000.000 Keatas</option>
-				</select>
-				<br>
-			<div class="col-12">
-				<label for="foto" class="form-label">Foto Peserta</label>
-				<input type="image" class="form-control" id="foto">
-				<br>
-			<button type="submit" class="btn btn-primary my-3">Kirim</button>
-
-		</form>
+			<h3>PENDAFTARAN BEASISWA X</h3>
+			<div class="container">
+					<br>
+				<br>	
+						<h5>TAHAP SELEKSI TELAH BERAKHIR</h5>
 					</div>
 				</section>
-				<section id="comment">
-					<div class="container">
-						<h3>REASON</h3>	
-						<div class="mb-12">
-							<div class="mb-12">
-								<form action="/komentar" method="POST">
-									@csrf
-									<label for="komentar" class="form-label" >Masukkan Alasan anda membutuhkan beasiswa X sebagai pertimbangan Panitia Seleksi</label>
-									<textarea required name="comment" class="form-control" id="komentar" rows="3" placeholder='Masukkan Komentar'></textarea>
-									<button class="btn btn-primary my-3" >Kirim</button>
-							</div>
-						</form>
-					</div>
-				</div>
+
+	<section id="hasil">
+		<div class="container">
+		<h3>DAFTAR PESERTA LOLOS TAHAP SELEKSI BEASISWA X</h3>
+			<table class="table table-light table-striped">
+				<thead>
+					<tr>
+						<th>NO</th>
+						<th>Nama</th>
+						<th>Nama Kampus</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
 	</section>
 
-	<section id="comment">
-		
-
 	<!-- CONTACT -->
+
 	<section id="contact">
 		<div class="container">
 			<h3>CONTACT</h3>
@@ -164,12 +98,13 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	
+	
 	<div class="container">
 			<h3>OUR ADDRESS</h3>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.6295341873392!2d116.2078899144956!3d-1.8979404986162505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df047bee25d8563%3A0xc58232e4f0facbf2!2sJl.%20Senaken%2C%20Tanah%20Grogot%2C%20Kabupaten%20Paser%2C%20Kalimantan%20Timur%2076251!5e0!3m2!1sen!2sid!4v1614415220963!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
-
+	</section>
 	<!--footer-->
 	<footer>
 		<div id="copyright">

@@ -38,6 +38,7 @@ a {
 	display: block;
 	clear: both;
 }
+
 header ul li a:hover {
 	color: #fff;
 }
@@ -105,7 +106,7 @@ section h5 {
 	margin-bottom: 20px;
 	background-color: #fc9f9f;
 }
-#maintenance {
+#bio {
 
 	background: #3B474E;
 }
@@ -115,10 +116,11 @@ section h5 {
 	background: #3B474E;
 }
 
+#contact {
 
-#comment {
-	padding: 50px;
+	background: #3B474E;
 }
+
 .videos {
     margin: auto;
     justify-content: space-around;
@@ -127,14 +129,14 @@ section h5 {
     text-align: center;
     align-items: center;
 }
-#maintenance p {
+#bio {
 	color: #9fccfc;
 	font-family: 'Open Sans', sans-serif;
 	word-spacing: 2px;
 	line-height: 25px;
-	text-align: center;
+	text-align: left;
 }
-#comment {
+#hasil {
 	background: #3B474E;
 }
 .box {
