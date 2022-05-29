@@ -58,7 +58,7 @@
                   <td><{{$dt->foto}}></td>
                   <td>
                     <a href="/detail/{{$dt->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                    <a href="/hapusresident/{{$dt->id}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    <a href="/hapuspendaftar/{{$dt->id}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
               @endforeach

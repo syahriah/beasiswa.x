@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResidentsTable extends Migration
+class CreatePendaftarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateResidentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('resident', function (Blueprint $table) {
+        Schema::create('pendaftar', function (Blueprint $table) {
             $table->id();
-            $table->string('rooms', 100);
             $table->string('nama', 100);
-            $table->string('nomorhp', 100);
-            $table->string('jumlah_keluarga', 100);
+            $table->string('inputKampus', 100);
+            $table->string('ak-kampus', 100);
+            $table->string('inputProdi', 100);
+            $table->string('ak-prodi', 100);
+            $table->string('ipk', 100);
+            $table->string('ukt', 100);
+            $table->string('gaji');
             $table->string('foto');
             $table->timestamps();
         });
@@ -31,6 +35,6 @@ class CreateResidentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resident');
+        Schema::dropIfExists('pendaftar');
     }
 }

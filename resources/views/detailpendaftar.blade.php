@@ -23,7 +23,7 @@
     <tr>
         <th width="100px">NILAI C1</th>
         <th width="30px">:</th>
-        <th>{{ $data->rooms}}</th>
+        <th>{{ $data->rank}}</th>
     </tr>
     <tr>
         <th width="100px">NILAI C2</th>
@@ -56,7 +56,7 @@
         <th>{{ $data->jumlah_keluarga}}</th>
     </tr>
     <tr>
-        <th><a href="/resident" class="btn btn-success tbn-sm">kembali</a></th>
+        <th><a href="/pendaftar" class="btn btn-success tbn-sm">kembali</a></th>
     </tr>
 </table>
 

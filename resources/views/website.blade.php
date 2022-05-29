@@ -48,7 +48,7 @@
 	<section id="bio">
 		<div class="container">
 			<h3>PENDAFTARAN BEASISWA X</h3>
-			<form action="/maintenance" method="POST">
+			<form action="/lolos" method="POST">
 				@csrf
 			<label class="form-label">Masukkan Nama Lengkap</label>
 			<div class="row g-3">

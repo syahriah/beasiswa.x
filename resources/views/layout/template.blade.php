@@ -78,7 +78,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/resident" class="nav-link">
+            <a href="/pendaftar" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
               Pendaftar Beasiswa
@@ -86,14 +86,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/rooms" class="nav-link">
+            <a href="/rank" class="nav-link">
               <i class="nav-icon fas fa-trophy"></i>
               <p>
                 Ranking hasil seleksi
               </p>
             </a>
           <li class="nav-item">
-            <a href="/maintenance" class="nav-link">
+            <a href="/lolos" class="nav-link">
                <i class="nav-icon fas fa-award"></i>
               <p>
               Lolos Beasiswa
