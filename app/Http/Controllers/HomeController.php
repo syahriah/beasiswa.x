@@ -218,17 +218,17 @@ class HomeController extends Controller
         foreach ($kriteria["ukt"] as $ukt) {
             $temp = null;
             if ($ukt <= 2000000) {
-                $temp = 1;
-            } else if ($ukt > 2000000 and $ukt <= 3000000) {
-                $temp = 0.8;
-            } else if ($ukt > 3000000 and $ukt <= 4000000) {
-                $temp = 0.6;
-            } else if ($ukt > 4000000 and $ukt <= 5000000) {
-                $temp = 0.4;
-            } else if ($ukt > 5000000 and $ukt <= 6000000) {
-                $temp = 0.2;
-            } else if ($ukt > 6000000) {
                 $temp = 0.1;
+            } else if ($ukt > 2000000 and $ukt <= 3000000) {
+                $temp = 0.2;
+            } else if ($ukt > 3000000 and $ukt <= 4000000) {
+                $temp = 0.4;
+            } else if ($ukt > 4000000 and $ukt <= 5000000) {
+                $temp = 0.6;
+            } else if ($ukt > 5000000 and $ukt <= 6000000) {
+                $temp = 0.8;
+            } else if ($ukt > 6000000) {
+                $temp = 1;
             }
 
             $fuzzy_kriteria["ukt"][] = $temp;
@@ -237,11 +237,11 @@ class HomeController extends Controller
             $temp = null;
             switch ($pkerja) {
                 case 'Rp 1.000.000 - Rp 2.000.000':
-                    $temp = 1;
+                    $temp = 0.2;
                     break;
 
                 case 'Rp 2.000.000 - Rp 3.000.000':
-                    $temp = 0.8;
+                    $temp = 0.4;
                     break;
 
                 case 'Rp 3.000.000 - Rp 4.000.000':
@@ -249,11 +249,11 @@ class HomeController extends Controller
                     break;
 
                 case 'Rp 4.000.000 - Rp 5.000.000':
-                    $temp = 0.4;
+                    $temp = 0.8;
                     break;
 
                 case 'Rp 5.000.000 Keatas':
-                    $temp = 0.2;
+                    $temp = 1;
                     break;
             }
             $fuzzy_kriteria["gaji_ortu"][] = $temp;
@@ -279,13 +279,13 @@ class HomeController extends Controller
             $normalisasi_fuzzy["ipk"][] = $temp;
         }
         foreach ($fuzzy_kriteria["ukt"] as $fukt) {
-            // $temp = min($fuzzy_kriteria["ukt"]) / $fukt;
-            $temp = $fukt / max($fuzzy_kriteria["ukt"]);
+            $temp = min($fuzzy_kriteria["ukt"]) / $fukt;
+            // $temp = $fukt / max($fuzzy_kriteria["ukt"]);
             $normalisasi_fuzzy["ukt"][] = $temp;
         }
         foreach ($fuzzy_kriteria["gaji_ortu"] as $fpkerja) {
-            // $temp = min($fuzzy_kriteria["gaji_ortu"]) / $fpkerja;
-            $temp = $fpkerja / max($fuzzy_kriteria["gaji_ortu"]);
+            $temp = min($fuzzy_kriteria["gaji_ortu"]) / $fpkerja;
+            // $temp = $fpkerja / max($fuzzy_kriteria["gaji_ortu"]);
             $normalisasi_fuzzy["gaji_ortu"][] = $temp;
         }
 
