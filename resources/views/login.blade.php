@@ -32,8 +32,8 @@
               <form action="/login" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="kamar" class="form-label">Nomor Kamar</label>
-                  <input required type="text" class="form-control" name="kamar" id="kamar">
+                  <label for="email" class="form-label">Email</label>
+                  <input required type="text" class="form-control" name="email" id="email">
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">Password</label>

@@ -33,7 +33,6 @@
 				<li><a href="#bio">DAFTAR</a></li>
 				<li><a href="#hasil">HASIL SELEKSI</a></li>
 				<li><a href="#contact">CONTACT</a></li>
-				<li><a href="/logout">LOGOUT</a></li>
 			</ul>
 		</div>
 	</header>

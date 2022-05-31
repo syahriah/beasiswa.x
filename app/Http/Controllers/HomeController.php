@@ -23,7 +23,7 @@ class HomeController extends Controller
     }
     public function loginpost(Request $request)
     {
-        if (Auth::attempt(['kamar' => $request->kamar, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('/');
         } else {
             return redirect()->back()->with('pesan', 'Username atau password salah');
