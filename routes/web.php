@@ -14,31 +14,37 @@ use App\Http\Controllers\PendaftarController;
 |
 */
 
+Route::get('/website', [HomeController::class, 'index7']);
 
 Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [HomeController::class, 'loginpost']);
-
 Route::get('/logout', [HomeController::class, 'logout']);
 
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/pendaftar', [HomeController::class, 'index2']);
+Route::get('/rank', [HomeController::class, 'index4']);
+Route::get('/lolos', [HomeController::class, 'index5']);
 
-Route::get('/register', [HomeController::class, 'register']);
-Route::post('/register', [HomeController::class, 'registerpost']);
+Route::post('/pendaftaran', [HomeController::class, 'pendaftaran']);
+
+Route::get('/detail/{pendaftar}', [HomeController::class, 'detailpendaftar']);
+Route::get('/hapuspendaftar/{pendaftar}', [HomeController::class, 'hapuspendaftar']);
+
+Route::get('/rankpendaftar', [HomeController::class, 'rankPendaftar']);
+Route::get('/ranksaw', [HomeController::class, 'rankSaw']);
+
+
+
+
+
+// Route::get('/comment', [HomeController::class, 'index6']);
+
+// Route::post('/pendaftar/insert', [HomeController::class, 'insert']);
+// Route::post('/pendaftar/update', [HomeController::class, 'update']);
+
 
 
 Route::middleware(['auth'])->group(function () {
   Route::middleware(['user'])->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
-    Route::get('/pendaftar', [HomeController::class, 'index2']);
-    Route::get('/rank', [HomeController::class, 'index4']);
-    Route::get('/lolos', [HomeController::class, 'index5']);
-
-    Route::get('/comment', [HomeController::class, 'index6']);
-
-    Route::get('/detail/{id}', [HomeController::class, 'detailpendaftar']);
-    Route::get('/hapuspendaftar/{id}', [HomeController::class, 'hapuspendaftar']);
-    Route::post('/pendaftar/insert', [HomeController::class, 'insert']);
-    Route::post('/pendaftar/update', [HomeController::class, 'update']);
   });
-
-  Route::get('/website', [HomeController::class, 'index7']);
 });

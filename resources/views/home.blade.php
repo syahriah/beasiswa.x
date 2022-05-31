@@ -26,7 +26,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Pendaftar Beasiswa</span>
                 <span class="info-box-number">
-                  {{$lolos}}
+                  {{$jumlah}}
                   <small>orang</small>
                 </span>
               </div>
@@ -41,7 +41,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Lolos Beasiswa</span>
-                <span class="info-box-number">{{$rank}}</span>
+                <span class="info-box-number">{{$lolos}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,7 +58,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Tidak Lolos Beasiswa</span>
-                <span class="info-box-number">{{$comment}}</span>
+                <span class="info-box-number">{{$tidak_lolos}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>

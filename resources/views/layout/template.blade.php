@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="{{asset('template/')}}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('template/')}}/dist/css/adminlte.min.css">
+
+  @yield("css")
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -41,7 +43,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/website" class="brand-link">
-      <img src="img/logo.png" style="opacity: .8" height="60" width="60">
+      <img src="/img/logo.png" style="opacity: .8" height="60" width="60">
       <span class="brand-text font-weight-light">BEASISWA X</span>
     </a>
 
@@ -155,5 +157,7 @@
 <script src="{{asset('template/')}}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('template/')}}/dist/js/demo.js"></script>
+
+@yield("script")
 </body>
 </html>

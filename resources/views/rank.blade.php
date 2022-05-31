@@ -1,4 +1,9 @@
 @extends('layout.template')
+@section("css")
+<link rel="stylesheet" href="{{ asset("template") }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset("template") }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset("template") }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+@endsection
 @section('content')
 <section class="content-header">
       <div class="container-fluid">
@@ -15,12 +20,12 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    <label for="peserta" class="form-label"></label>
+    {{-- <label for="peserta" class="form-label"></label>
         <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
         <datalist id="peserta">
-    </datalist>
+    </datalist> --}}
     <br>
-    <table class="table table-dark table-striped">
+    <table class="table table-dark table-striped" id="example2">
     <thead>
       <tr>
         <th>NO</th>
@@ -32,6 +37,7 @@
         <th>Nilai IPK</th>
         <th>Biaya UKT</th>
         <th>Gaji Orang Tua</th>
+        <th>Nilai (SAW)</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -39,19 +45,49 @@
       @foreach ($data as $dt)
       <tr>
           <td>{{$loop->iteration}}</td>
-          <td>{{$dt->nama}}</td>
-          <td>{{$dt->nama_kampus}}</td>
-          <td>{{$dt->ak_kampus}}</td>
-          <td>{{$dt->prodi}}</td>
-          <td>{{$dt->ak_prodi}}</td>
-          <td>{{$dt->ipk}}</td>
-          <td>{{$dt->ukt}}</td>
-          <td>{{$dt->gaji}}</td>
+          <td>{{$dt["mahasiswa"]->first_name . " " . $dt["mahasiswa"]->last_name}}</td>
+          <td>{{$dt["mahasiswa"]->kampus}}</td>
+          <td>{{$dt["mahasiswa"]->akre_kampus}}</td>
+          <td>{{$dt["mahasiswa"]->prodi}}</td>
+          <td>{{$dt["mahasiswa"]->akre_prodi}}</td>
+          <td>{{$dt["mahasiswa"]->ipk}}</td>
+          <td>{{$dt["mahasiswa"]->ukt}}</td>
+          <td>{{$dt["mahasiswa"]->gaji_ortu}}</td>
+          <td>{{$dt["nilai"]}}</td>
           <td>
-          <a href="/detail/{{$dt->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+          <a href="/detail/{{$dt["mahasiswa"]->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
           </td>
         </tr>
+        @endforeach
     </tbody>
-    @endforeach
 </table>
+@endsection
+
+@section("script")
+<script src="{{ asset("template") }}/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="{{ asset("template") }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{ asset("template") }}/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset("template") }}/dist/js/demo.js"></script>
+<script>
+  $(function () {
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+    });
+  });
+</script>
 @endsection

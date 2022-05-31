@@ -47,61 +47,66 @@
 	<!-- about -->
 	<section id="bio">
 		<div class="container">
+			@if(session("pesan"))
+			<div class="alert bg-success text-center">
+				{{ session("pesan") }}
+			</div>
+			@endif
 			<h3>PENDAFTARAN BEASISWA X</h3>
-			<form action="/lolos" method="POST">
+			<form action="/pendaftaran" method="POST" enctype="multipart/form-data">
 				@csrf
 			<label class="form-label">Masukkan Nama Lengkap</label>
 			<div class="row g-3">
 				<div class="col">
-					<input type="text" class="form-control" placeholder="First name" aria-label="First name">
+					<input type="text" name="first_name" class="form-control"  required placeholder="First name" aria-label="First name">
 				</div>
 				<div class="col">
-					<input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+					<input type="text" name="last_name" class="form-control"  required placeholder="Last name" aria-label="Last name">
 				</div>
 			</div>
 			<br>
 			<div class="col-12">
 				<label for="inputKampus" class="form-label">Nama Kampus</label>
-				<input type="text" class="form-control" id="inputKampus" placeholder="Masukkan nama kampus secara lengkap">
+				<input type="text" name="kampus" class="form-control" id="inputKampus"  required placeholder="Masukkan nama kampus secara lengkap">
 			</div>
 			<br>
 			<div class="col-md-12">
 				<label for="ak-kampus" class="form-label">Akreditasi Kampus</label>
-				<select id="ak-kampus" class="form-select">
+				<select required id="ak-kampus" class="form-select" name="akre_kampus">
+					<option selected >...</option>
 				<option>A</option>
 				<option>B</option>
 				<option>C</option>
-				<option selected >...</option>
 				</select>
 			</div>
 			<br>
 			<div class="col-12">
 				<label for="inputProdi" class="form-label">Program Studi</label>
-				<input type="text" class="form-control" id="inputProdi" placeholder="Masukkan Program Studi">
+				<input type="text" class="form-control" id="inputProdi" name="prodi"  required placeholder="Masukkan Program Studi">
 			</div>
 			<br>
 			<div class="col-md-12">
 				<label for="ak-prodi" class="form-label">Akreditasi Program Studi</label>
-				<select id="ak-prodi" class="form-select">
+				<select required id="ak-prodi" class="form-select" name="akre_prodi">
+				<option selected >...</option>
 				<option>A</option>
 				<option>B</option>
 				<option>C</option>
-				<option selected >...</option>
 				</select>
 			</div>
 			<br>
 			<div class="col-12">
 				<label for="inputIPK" class="form-label">Nilai IPK</label>
-				<input type="text" class="form-control" id="inputIPK" placeholder="Masukkan nilai IPK terakhir">
+				<input type="text" class="form-control" id="inputIPK" name="ipk"  required placeholder="Masukkan nilai IPK terakhir">
 			</div>
 			<br>
 			<div class="col-12">
 				<label for="inputUKT" class="form-label">Biaya UKT</label>
-				<input type="text" class="form-control" id="inputUKT" placeholder="Masukkan biaya UKT Per-Semester">
+				<input type="text" class="form-control" id="inputUKT" name="ukt"  required placeholder="Masukkan biaya UKT Per-Semester">
 			</div>
 			<br>
 			<label for="inputGaji" class="form-label">Gaji Orang Tua Per-Bulan</label>
-				<select id="inputGaji" class="form-select">
+				<select required id="inputGaji" class="form-select" name="gaji_ortu">
 				<option selected>Rp 1.000.000 - Rp 2.000.000</option>
 				<option>Rp 2.000.000 - Rp 3.000.000</option>
 				<option>Rp 3.000.000 - Rp 4.000.000</option>
@@ -111,7 +116,7 @@
 				<br>
 			<div class="col-12">
 				<label for="foto" class="form-label">Foto Peserta</label>
-				<input type="image" class="form-control" id="foto">
+				<input type="file" required accept="img/*" name="gambar" class="form-control" id="foto">
 				<br>
 			<button type="submit" class="btn btn-primary my-3">Kirim</button>
 			</div>
