@@ -52,6 +52,7 @@
 				{{ session("pesan") }}
 			</div>
 			@endif
+			@if($status == "open")
 			<h3>PENDAFTARAN BEASISWA X</h3>
 			<form action="/pendaftaran" method="POST" enctype="multipart/form-data">
 				@csrf
@@ -121,15 +122,57 @@
 			<button type="submit" class="btn btn-primary my-3">Kirim</button>
 			</div>
 		</form>
+		@else
+		<section id="hasil">
+			<div class="container">
+				<h3>DAFTAR PESERTA LOLOS SELEKSI BEASISWA X</h3>	
+				{{-- <h5>PENGUMUMAN HASIL SELEKSI AKAN DITAMPILKAN PADA 30 Desember 2022</h5> --}}
+			</div>
 
-				<section id="hasil">
-					<div class="container">
-					<br>
-				<br>
-						<h3>DAFTAR PESERTA LOLOS SELEKSI BEASISWA X</h3>	
-						<h5>PENGUMUMAN HASIL SELEKSI AKAN DITAMPILKAN PADA ****</h5>
-					</div>
-				</section>
+			<div class="card">
+				<div class="card-body">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>NO</th>
+								<th>Nama</th>
+								<th>Nama Kampus</th>
+								<th>Akred Kampus</th>
+								<th>Prodi</th>
+								<th>Akred Prodi</th>
+								<th>Nilai IPK</th>
+								<th>Biaya UKT</th>
+								<th>Gaji Orang Tua</th>
+								<th>Nilai (SAW)</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($data as $dt)
+							<tr>
+									<td>{{$loop->iteration}}</td>
+									<td>{{$dt["mahasiswa"]->first_name}} {{ $dt["mahasiswa"]->last_name }}</td>
+									<td>{{$dt["mahasiswa"]->kampus}}</td>
+									<td>{{$dt["mahasiswa"]->akre_kampus}}</td>
+									<td>{{$dt["mahasiswa"]->prodi}}</td>
+									<td>{{$dt["mahasiswa"]->akre_prodi}}</td>
+									<td>{{$dt["mahasiswa"]->ipk}}</td>
+									<td>{{$dt["mahasiswa"]->ukt}}</td>
+									<td>{{$dt["mahasiswa"]->gaji_ortu}}</td>
+									<td>{{$dt["nilai"]}}</td>
+							</tr>
+							@if ($loop->iteration == 20)
+								@php
+									break;
+								@endphp
+							@endif
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		@endif
+
 		
 
 	<!-- CONTACT -->

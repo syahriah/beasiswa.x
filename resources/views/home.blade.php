@@ -26,8 +26,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Pendaftar Beasiswa</span>
                 <span class="info-box-number">
-                  {{$jumlah}}
-                  <small>orang</small>
+                  {{$jumlah}} orang
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -41,7 +40,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Lolos Beasiswa</span>
-                <span class="info-box-number">{{$lolos}}</span>
+                <span class="info-box-number">{{$lolos}} orang</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,7 +57,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Tidak Lolos Beasiswa</span>
-                <span class="info-box-number">{{$tidak_lolos}}</span>
+                <span class="info-box-number">{{$tidak_lolos}} orang</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -80,44 +79,49 @@
 
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-          <br>
-          <br>
-            <h3>JUMLAH SLOT BEASISWA X</h3>
+          <div class="col-sm-12">
+            <br>
+            <h3>INFORMASI BEASISWA X</h3>
+            <div class="card">
+              <div class="card-body">
+                {{-- make informasi tentang jumlah pendaftar diterima dan tanggal di tutup --}}
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h5 class="m-0">Jumlah Pendaftar</h5>
+                      </div>
+                      <div class="card-body">
+                        <h1 class="card-title">{{$jumlah}} orang</h1>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h5 class="m-0">Tanggal Tutup</h5>
+                      </div>
+                      <div class="card-body">
+                        <h1 class="card-title">Jum'at, 30 Desember 2022</h1>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                @if($status == "open")
+                <a href="/update-status" class="btn btn-info w-100">Tutup Pendaftaran Beasiswa X</a>
+                @else
+                <div class="alert bg-success text-center col-12">
+                  Beasiswa X telah ditutup
+                </div>
+                @endif
+              </div>
+            </div>
           </div>
-          </div>
+        </div>
     </div>
     
-    <input id="slot" type="text" class="form-control" placeholder="Masukkan Jumlah Slot Penerima Beasiswa" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="btnslot">Button </button>
-      <!-- /.card -->
-    </section>
-    <section class="content">
-      <div class="container-fluid">
-    <table class="table table-dark table-striped">
-        <thead>
-               <tr>
-                    <th>Jumlah Slot Beasiswa X</th>
-                    <th>Action</th>
-                </tr>
-        </thead>
-        <tbody>
-            </tbody>
-     </table>
-    </div>
-     </section>
-    <!-- /.Left col -->
-    <!-- right col (We are only adding the ID to make the widgets sortable)-->
     
-    <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-          <br>
-          <br>
-            <h3>TANGGAL PENUTUPAN FORM PENDAFTARAN</h3>
-          </div>
-          </div>
-    </div>
 
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pendaftar;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,15 @@ class HomeController extends Controller
         $jumlah = Pendaftar::all()->count();
         $lolos = 20;
         $tidak_lolos = $jumlah - $lolos;
-        return view('home', compact('jumlah', 'lolos', 'tidak_lolos'));
+        $status = Status::where("nama", "status")->pluck("value")->first();
+
+        return view('home', compact('jumlah', 'lolos', 'tidak_lolos', "status"));
+    }
+    public function updateStatus()
+    {
+        Status::where("nama", "status")->first()
+            ->update(["value" => "close"]);
+        return back()->with("pesan", "Berhasil menutup pendaftaran");
     }
 
     public function index2()
@@ -99,12 +108,15 @@ class HomeController extends Controller
 
     public function index5()
     {
-        return view('Lolos');
+        $data = $this->rankSaw();
+        return view('Lolos', compact('data'));
     }
 
     public function index7()
     {
-        return view('website');
+        $status = Status::where("nama", "status")->pluck("value")->first();
+        $data = $this->rankSaw();
+        return view('website', compact("status", "data"));
     }
 
 

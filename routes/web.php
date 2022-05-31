@@ -21,6 +21,7 @@ Route::post('/login', [HomeController::class, 'loginpost']);
 Route::get('/logout', [HomeController::class, 'logout']);
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/update-status', [HomeController::class, 'updateStatus']);
 Route::get('/pendaftar', [HomeController::class, 'index2']);
 Route::get('/rank', [HomeController::class, 'index4']);
 Route::get('/lolos', [HomeController::class, 'index5']);
@@ -45,6 +46,4 @@ Route::get('/ranksaw', [HomeController::class, 'rankSaw']);
 
 
 Route::middleware(['auth'])->group(function () {
-  Route::middleware(['user'])->group(function () {
-  });
 });
